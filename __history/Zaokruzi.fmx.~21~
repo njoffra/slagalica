@@ -1,0 +1,84 @@
+object ZaokruziForma: TZaokruziForma
+  Left = 0
+  Top = 0
+  Caption = 'Form6'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TekstPitanja: TText
+    Position.X = 120.000000000000000000
+    Position.Y = 40.000000000000000000
+    Size.Width = 409.000000000000000000
+    Size.Height = 57.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object PotvrdiDugme: TButton
+    Position.X = 264.000000000000000000
+    Position.Y = 400.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'PotvrdiDugme'
+    OnClick = PotvrdiDugmeClick
+  end
+  object TrenutniBodovi: TText
+    Position.X = 96.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 41.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object TrenutniBodoviLabel: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Trenutni Bodovi:'
+    TabOrder = 3
+  end
+  object Odgovor1: TRadioButton
+    Position.X = 240.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Odgovor1'
+    OnChange = Odgovor1Change
+  end
+  object Odgovor2: TRadioButton
+    Position.X = 240.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'RadioButton1'
+    OnChange = Odgovor2Change
+  end
+  object Odgovor3: TRadioButton
+    Position.X = 240.000000000000000000
+    Position.Y = 256.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'RadioButton1'
+    OnChange = Odgovor3Change
+  end
+  object Odgovor4: TRadioButton
+    Position.X = 240.000000000000000000
+    Position.Y = 328.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'RadioButton1'
+    OnChange = Odgovor4Change
+  end
+end

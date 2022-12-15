@@ -1,0 +1,40 @@
+//---------------------------------------------------------------------------
+
+#ifndef ZaokruziH
+#define ZaokruziH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <FMX.Controls.hpp>
+#include <FMX.Forms.hpp>
+#include <FMX.Objects.hpp>
+#include <FMX.Types.hpp>
+#include <FMX.Controls.Presentation.hpp>
+#include <FMX.StdCtrls.hpp>
+
+//---------------------------------------------------------------------------
+
+class TZaokruziForma : public TForm
+{
+__published:	// IDE-managed Components
+	TText *TekstPitanja;
+	TButton *PotvrdiDugme;
+	TText *TrenutniBodovi;
+	TLabel *TrenutniBodoviLabel;
+	TRadioButton *Odgovor1;
+	TRadioButton *Odgovor2;
+	TRadioButton *Odgovor3;
+	TRadioButton *Odgovor4;
+	void __fastcall PotvrdiDugmeClick(TObject *Sender);
+	void __fastcall Odgovor1Change(TObject *Sender);
+	void __fastcall Odgovor2Change(TObject *Sender);
+	void __fastcall Odgovor3Change(TObject *Sender);
+	void __fastcall Odgovor4Change(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TZaokruziForma(TComponent* Owner);
+	
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TZaokruziForma *ZaokruziForma;
+//---------------------------------------------------------------------------
+#endif

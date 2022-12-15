@@ -1,0 +1,23 @@
+//---------------------------------------------------------------------------
+
+#ifndef ZaokruzivanjeH
+#define ZaokruzivanjeH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <FMX.Controls.hpp>
+#include <FMX.Forms.hpp>
+#include <FMX.Objects.hpp>
+#include <FMX.Types.hpp>
+//---------------------------------------------------------------------------
+class TZaokruzivanjeForma : public TForm
+{
+__published:	// IDE-managed Components
+	TText *PitanjeText;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TZaokruzivanjeForma(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TZaokruzivanjeForma *ZaokruzivanjeForma;
+//---------------------------------------------------------------------------
+#endif

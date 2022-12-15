@@ -1,0 +1,51 @@
+//---------------------------------------------------------------------------
+
+#include <fmx.h>
+#pragma hdrstop
+
+#include "Navigacija.h"
+#include "Broj.h"
+#include "Spajanje.h"
+#include "Vjesala.h"
+#include "Zaokruzi.h"
+#include "Asocijacije.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::BrojButtonClick(TObject *Sender)
+{
+	BrojForma->Show();
+	this->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::SpajanjeButtonClick(TObject *Sender)
+{
+	SpajanjeForma->Show();
+	this->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::AsocijacijeButtonClick(TObject *Sender)
+{
+	AsocijacijeForma->Show();
+	this->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::VjesalaButtonClick(TObject *Sender)
+{
+    VjesalaForma->Show();
+	this->Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ZaokruziButtonClick(TObject *Sender)
+{
+	ZaokruziForma->Show();
+	this->Close();
+}
+//---------------------------------------------------------------------------

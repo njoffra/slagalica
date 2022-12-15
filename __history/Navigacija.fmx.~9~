@@ -1,0 +1,61 @@
+object NavigacijaForma: TNavigacijaForma
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object BrojButton: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 88.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'BrojButton'
+    OnClick = BrojButtonClick
+  end
+  object SpajanjeButton: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'SpajanjeButton'
+    OnClick = SpajanjeButtonClick
+  end
+  object AsocijacijeButton: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'AsocijacijeButton'
+    OnClick = AsocijacijeButtonClick
+  end
+  object VjesalaButton: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 280.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'VjesalaButton'
+    OnClick = VjesalaButtonClick
+  end
+  object ZaokruziButton: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 121.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'ZaokruziButton'
+    OnClick = ZaokruziButtonClick
+  end
+end
