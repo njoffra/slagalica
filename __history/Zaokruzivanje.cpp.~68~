@@ -26,6 +26,8 @@ int skor;
 int broj_pokusaja=0;
 int seed;
 
+// mozda se moze deklatist u headeru al me strah ovih errora
+
 vector <String> pitanja;
 vector <String> odg1;
 vector <String> odg2;
@@ -39,25 +41,10 @@ void ocisti(){
 	ZaokruzivanjeForma->Odgovor4->IsChecked = false;
 }
 
-void citaj(string path, vector<String> vektor){
-	fstream pitanjaFile;
-	pitanjaFile.open(path, ios::in);
-	if(pitanjaFile.is_open()){
-		string line;
-		while (getline(pitanjaFile, line)){
-
-		String novi_string(line.c_str());
-		pitanja.push_back(novi_string);
-
-		}
-		ZaokruzivanjeForma->Label1->Text = pitanja.size() ;
-		pitanjaFile.close();
-	}else{
-		ZaokruzivanjeForma->Label1->Text = "nije otvorfeno" ;
-	}
-}
 
 void izmjesaj_pitanja(){
+
+// Kad ovaj repetativni kod ubacim u funkciju budu neki errori bez ikakve poruke
 
 	fstream pitanjaFile;
 	pitanjaFile.open("C:/Users/korisnik/Desktop/KVIZ/pitanja.txt", ios::in);
@@ -65,13 +52,15 @@ void izmjesaj_pitanja(){
 		string line;
 		while (getline(pitanjaFile, line)){
 
-		String novi_string(line.c_str());
+		String novi_string(line.c_str());// std::string i String nje isto
 		pitanja.push_back(novi_string);
 
 		}
-		ZaokruzivanjeForma->Label1->Text = pitanja.size() ;
+
+		ZaokruzivanjeForma->Label1->Text = pitanja.size(); // za provjeru
 		pitanjaFile.close();
-	}else{
+	}
+	else{
 		ZaokruzivanjeForma->Label1->Text = "nije otvorfeno" ;
 	}
 
@@ -92,6 +81,7 @@ void izmjesaj_pitanja(){
 	}else{
 		ZaokruzivanjeForma->Label1->Text = "nije otvorfeno" ;
 	}
+
 	fstream odg2File;
 	odg2File.open("C:/Users/korisnik/Desktop/KVIZ/odg2.txt", ios::in);
 	if(odg2File.is_open()){
@@ -126,7 +116,7 @@ void izmjesaj_pitanja(){
 	}
 
 	srand(time(NULL));
-	seed = rand()%20+1;
+	seed = rand()%20+1; //neki random seed da svaki put budu drugaciji redoslijedi
 
 	std::srand (seed);
 	random_shuffle(pitanja.begin(), pitanja.end());
@@ -144,6 +134,8 @@ void izmjesaj_pitanja(){
 __fastcall TZaokruzivanjeForma::TZaokruzivanjeForma(TComponent* Owner)
 	: TForm(Owner)
 {
+	// ovaj kod se runna kad god se udje na formu i samo tada
+
 	izmjesaj_pitanja();
 	srand(time(NULL));
 	rand();
@@ -191,11 +183,12 @@ void __fastcall TZaokruzivanjeForma::Odgovor4Change(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TZaokruzivanjeForma::PotvrdiButtonClick(TObject *Sender)
 {
-
+    // ovaj kod se runna kad god se klikne dugme
 
 	int a;
 	srand(time(NULL));
 	rand();
+// nasumicno raspodjeljivanje pitanja i odgovora, moze i jednostavnije al mrsko mi
 	if(tacan_odg_rb == 1){
 
 					if(izabran_odgovor == 1) skor = skor + 3;
@@ -263,13 +256,14 @@ void __fastcall TZaokruzivanjeForma::PotvrdiButtonClick(TObject *Sender)
 
 	}
 	else{
+        // kad nestane pitanja ili se odgovori na dovoljno pitanja
 		NavigacijaForma->ZaokruziButton->Enabled = false;
-		NavigacijaForma->ukupni_bodovi += skor;
+		NavigacijaForma->ukupni_bodovi += skor; // ukupni_bodovi je deklarisana Navigacija.h
 		NavigacijaForma->UkupniBodovi->Text = NavigacijaForma->ukupni_bodovi;
 		this->Close();
 		NavigacijaForma->Show();
 	}
-
+    // svaki put ispise trenutni skor
 	TrenutniBodovi->Text = skor;
 }
 //---------------------------------------------------------------------------

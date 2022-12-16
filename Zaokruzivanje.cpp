@@ -27,6 +27,7 @@ int broj_pokusaja=0;
 int seed;
 
 // mozda se moze deklatist u headeru al me strah ovih errora
+// test test test
 
 vector <String> pitanja;
 vector <String> odg1;
