@@ -9,12 +9,16 @@
 #include <FMX.Controls.Presentation.hpp>
 #include <FMX.StdCtrls.hpp>
 #include <FMX.Types.hpp>
+#include <FMX.Objects.hpp>
 //---------------------------------------------------------------------------
 class TSpajanjeForma : public TForm
 {
 __published:	// IDE-managed Components
 	TButton *IzlazButton;
+	TText *TestText;
+	TButton *TestDugme;
 	void __fastcall IzlazButtonClick(TObject *Sender);
+	void __fastcall TestDugmeClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TSpajanjeForma(TComponent* Owner);

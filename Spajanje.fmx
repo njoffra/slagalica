@@ -18,4 +18,18 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'IzlazButton'
     OnClick = IzlazButtonClick
   end
+  object TestText: TText
+    Position.X = 224.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 89.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object TestDugme: TButton
+    Position.X = 312.000000000000000000
+    Position.Y = 312.000000000000000000
+    TabOrder = 2
+    Text = 'TestDugme'
+    OnClick = TestDugmeClick
+  end
 end
