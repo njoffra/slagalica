@@ -8,4 +8,14 @@ object SpajanjeForma: TSpajanjeForma
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
+  object IzlazButton: TButton
+    Position.X = 256.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'IzlazButton'
+    OnClick = IzlazButtonClick
+  end
 end
