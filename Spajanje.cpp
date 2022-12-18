@@ -3,6 +3,10 @@
 #include <fmx.h>
 #include <vector>
 #include <fstream>
+#include <algorithm>
+#include <random>
+#include <stdlib.h>
+#include <ctime>
 #pragma hdrstop
 
 #include "Spajanje.h"
@@ -62,41 +66,80 @@ public:
 		return this->pitanje;
 	}
 
-    void dodaj_zadatak(){
+};
+
+TSpajanjeForma *SpajanjeForma;
+
+ Zadaci z1;
+ vector<Zadaci> svi_zadaci;
+ int i=0;
+
+//---------------------------------------------------------------------------
+
+void dodaj_zadatak(){
 	fstream lijeva_strana_file;
 	fstream desna_strana_file;
 	lijeva_strana_file.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/LijevaStrana.txt", ios::in);
 	if(lijeva_strana_file.is_open()){
 		desna_strana_file.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/DesnaStrana.txt", ios::in);
 		if(desna_strana_file.is_open()){
+			Zadaci z;
 			string line1, line2;
 			while (getline(lijeva_strana_file, line1) && getline(desna_strana_file, line2)){
-				if(line1 != "KRAJ"){
+				if(line1 == "KRAJ"){
+					svi_zadaci.push_back(z);
+					z.daj_parove().clear();
+                    z = Zadaci();
+				}
+				else {
 					Spajanje temp(line1, line2);
-					this->parovi.push_back(temp);
-					}
+					z.dodaj_par(temp);
+				}
 			}
+
 			desna_strana_file.close();
-		}else{
+		}
+		else{
 			SpajanjeForma->TestText->Text = "Desna greska";
 		}
 		lijeva_strana_file.close();
-		}else{
+		}
+		else{
 			SpajanjeForma->TestText->Text = "Lijeva greska";
 		}
-	}
+	   }
 
-};
-
-TSpajanjeForma *SpajanjeForma;
-
-
-
-//---------------------------------------------------------------------------
 __fastcall TSpajanjeForma::TSpajanjeForma(TComponent* Owner)
 	: TForm(Owner)
 {
-
+	int seed;
+	vector<int>brojevi = {0, 1, 2, 3, 4, 5, 6, 7};
+    srand(time(NULL));
+	seed = rand()%20+1;
+	std::srand (seed);
+	random_shuffle(brojevi.begin(), brojevi.end());
+	dodaj_zadatak();
+    srand(time(NULL));
+	rand();
+	int broj;
+	broj = rand()% svi_zadaci.size();
+	Lijevo1->Text = svi_zadaci[broj].daj_parove()[0].getLijeva().c_str();
+	Lijevo2->Text = svi_zadaci[broj].daj_parove()[1].getLijeva().c_str();
+	Lijevo3->Text = svi_zadaci[broj].daj_parove()[2].getLijeva().c_str();
+	Lijevo4->Text = svi_zadaci[broj].daj_parove()[3].getLijeva().c_str();
+	Lijevo5->Text = svi_zadaci[broj].daj_parove()[4].getLijeva().c_str();
+	Lijevo6->Text = svi_zadaci[broj].daj_parove()[5].getLijeva().c_str();
+	Lijevo7->Text = svi_zadaci[broj].daj_parove()[6].getLijeva().c_str();
+	Lijevo8->Text = svi_zadaci[broj].daj_parove()[7].getLijeva().c_str();
+	Desno1->Text = svi_zadaci[broj].daj_parove()[brojevi[0]].getDesna().c_str();
+	Desno2->Text = svi_zadaci[broj].daj_parove()[brojevi[1]].getDesna().c_str();
+	Desno3->Text = svi_zadaci[broj].daj_parove()[brojevi[2]].getDesna().c_str();
+	Desno4->Text = svi_zadaci[broj].daj_parove()[brojevi[3]].getDesna().c_str();
+	Desno5->Text = svi_zadaci[broj].daj_parove()[brojevi[4]].getDesna().c_str();
+	Desno6->Text = svi_zadaci[broj].daj_parove()[brojevi[5]].getDesna().c_str();
+	Desno7->Text = svi_zadaci[broj].daj_parove()[brojevi[6]].getDesna().c_str();
+	Desno8->Text = svi_zadaci[broj].daj_parove()[brojevi[7]].getDesna().c_str();
+	TestText->Text = broj;
 }
 //---------------------------------------------------------------------------
 void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
@@ -109,13 +152,5 @@ void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TSpajanjeForma::TestDugmeClick(TObject *Sender)
-{
-	Zadaci z1;
-	z1.dodaj_zadatak();
-	String test = z1.daj_parove()[0].getLijeva().c_str();
-	TestText->Text = test;
 
-}
-//---------------------------------------------------------------------------
 

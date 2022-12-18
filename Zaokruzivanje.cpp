@@ -48,7 +48,7 @@ void izmjesaj_pitanja(){
 // Kad ovaj repetativni kod ubacim u funkciju budu neki errori bez ikakve poruke
 
 	fstream pitanjaFile;
-	pitanjaFile.open("C:/Users/korisnik/Desktop/KVIZ/pitanja.txt", ios::in);
+	pitanjaFile.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/pitanja.txt", ios::in);
 	if(pitanjaFile.is_open()){
 		string line;
 		while (getline(pitanjaFile, line)){
@@ -67,7 +67,7 @@ void izmjesaj_pitanja(){
 
 
 	fstream odg1File;
-	odg1File.open("C:/Users/korisnik/Desktop/KVIZ/odg1.txt", ios::in);
+	odg1File.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/odg1.txt", ios::in);
 	if(odg1File.is_open()){
 		string line;
 		while (getline(odg1File, line)){
@@ -84,7 +84,7 @@ void izmjesaj_pitanja(){
 	}
 
 	fstream odg2File;
-	odg2File.open("C:/Users/korisnik/Desktop/KVIZ/odg2.txt", ios::in);
+	odg2File.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/odg2.txt", ios::in);
 	if(odg2File.is_open()){
 		string line;
 		while (getline(odg2File, line)){
@@ -101,7 +101,7 @@ void izmjesaj_pitanja(){
 	}
 
 	fstream tacan_odgFile;
-	tacan_odgFile.open("C:/Users/korisnik/Desktop/KVIZ/tacanOdg.txt", ios::in);
+	tacan_odgFile.open("C:/Users/korisnik/Desktop/NoviFolder/slagalica/tacanOdg.txt", ios::in);
 	if(tacan_odgFile.is_open()){
 		string line;
 		while (getline(tacan_odgFile, line)){

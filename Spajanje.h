@@ -16,9 +16,23 @@ class TSpajanjeForma : public TForm
 __published:	// IDE-managed Components
 	TButton *IzlazButton;
 	TText *TestText;
-	TButton *TestDugme;
+	TButton *Lijevo1;
+	TButton *Lijevo2;
+	TButton *Lijevo3;
+	TButton *Lijevo4;
+	TButton *Lijevo5;
+	TButton *Lijevo6;
+	TButton *Lijevo7;
+	TButton *Lijevo8;
+	TButton *Desno1;
+	TButton *Desno2;
+	TButton *Desno3;
+	TButton *Desno4;
+	TButton *Desno5;
+	TButton *Desno6;
+	TButton *Desno7;
+	TButton *Desno8;
 	void __fastcall IzlazButtonClick(TObject *Sender);
-	void __fastcall TestDugmeClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TSpajanjeForma(TComponent* Owner);
