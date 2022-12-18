@@ -16,7 +16,6 @@
 #pragma resource "*.fmx"
 
 using namespace std;
-int bodovi=0;
 
 class Spajanje{
 
@@ -70,11 +69,23 @@ public:
 
 TSpajanjeForma *SpajanjeForma;
 
- Zadaci z1;
  vector<Zadaci> svi_zadaci;
- int i=0;
+ bool pritisnut=false;
+ int izabrana_lijeva;
+ int skor=0;
 
 //---------------------------------------------------------------------------
+
+void omoguci_desne(){
+	SpajanjeForma->Desno1->Enabled = true;
+	SpajanjeForma->Desno2->Enabled = true;
+	SpajanjeForma->Desno3->Enabled = true;
+	SpajanjeForma->Desno4->Enabled = true;
+	SpajanjeForma->Desno5->Enabled = true;
+	SpajanjeForma->Desno6->Enabled = true;
+	SpajanjeForma->Desno7->Enabled = true;
+	SpajanjeForma->Desno8->Enabled = true;
+}
 
 void dodaj_zadatak(){
 	fstream lijeva_strana_file;
@@ -145,7 +156,7 @@ __fastcall TSpajanjeForma::TSpajanjeForma(TComponent* Owner)
 void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
 {
 		NavigacijaForma->SpajanjeButton->Enabled = false;
-		NavigacijaForma->ukupni_bodovi += bodovi;
+		NavigacijaForma->ukupni_bodovi += skor;
 		NavigacijaForma->UkupniBodovi->Text = NavigacijaForma->ukupni_bodovi;
 		this->Close();
 		NavigacijaForma->Show();
@@ -153,4 +164,138 @@ void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TSpajanjeForma::Lijevo1Click(TObject *Sender)
+{
+	Lijevo1->Enabled = False;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 1;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo2Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = False;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 2;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo3Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = False;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 3;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo4Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = False;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 4;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo5Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = False;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 5;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo6Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = False;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 6;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo7Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = False;
+	Lijevo8->Enabled = True;
+	izabrana_lijeva = 7;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Lijevo8Click(TObject *Sender)
+{
+	Lijevo1->Enabled = True;
+	Lijevo2->Enabled = True;
+	Lijevo3->Enabled = True;
+	Lijevo4->Enabled = True;
+	Lijevo5->Enabled = True;
+	Lijevo6->Enabled = True;
+	Lijevo7->Enabled = True;
+	Lijevo8->Enabled = False;
+	izabrana_lijeva = 8;
+	omoguci_desne();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno1Click(TObject *Sender)
+{
+	if(izabrana_lijeva == 1){  // nemere treba vrijednost vezana za svako dugme
+		skor = skor + 2;
+		Desno1->Enabled = false;
+	}
+	TestText->Text = Lijevo1->Text;
+	if(TestText->Text == Lijevo1->Text){
+        TestText->Text = "Suces";
+	}
+
+}
+//---------------------------------------------------------------------------
 

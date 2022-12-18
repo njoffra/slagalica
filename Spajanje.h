@@ -33,6 +33,15 @@ __published:	// IDE-managed Components
 	TButton *Desno7;
 	TButton *Desno8;
 	void __fastcall IzlazButtonClick(TObject *Sender);
+	void __fastcall Lijevo1Click(TObject *Sender);
+	void __fastcall Lijevo2Click(TObject *Sender);
+	void __fastcall Lijevo3Click(TObject *Sender);
+	void __fastcall Lijevo4Click(TObject *Sender);
+	void __fastcall Lijevo5Click(TObject *Sender);
+	void __fastcall Lijevo6Click(TObject *Sender);
+	void __fastcall Lijevo7Click(TObject *Sender);
+	void __fastcall Lijevo8Click(TObject *Sender);
+	void __fastcall Desno1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TSpajanjeForma(TComponent* Owner);

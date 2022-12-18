@@ -33,6 +33,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 11
     Text = 'Lijevo1'
+    OnClick = Lijevo1Click
   end
   object Lijevo2: TButton
     Position.X = 72.000000000000000000
@@ -42,6 +43,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 12
     Text = 'Lijevo2'
+    OnClick = Lijevo2Click
   end
   object Lijevo3: TButton
     Position.X = 72.000000000000000000
@@ -51,6 +53,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 13
     Text = 'Lijevo3'
+    OnClick = Lijevo3Click
   end
   object Lijevo4: TButton
     Position.X = 72.000000000000000000
@@ -60,6 +63,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 14
     Text = 'Lijevo4'
+    OnClick = Lijevo4Click
   end
   object Lijevo5: TButton
     Position.X = 72.000000000000000000
@@ -69,6 +73,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 15
     Text = 'Lijevo5'
+    OnClick = Lijevo5Click
   end
   object Lijevo6: TButton
     Position.X = 72.000000000000000000
@@ -78,6 +83,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 16
     Text = 'Lijevo6'
+    OnClick = Lijevo6Click
   end
   object Lijevo7: TButton
     Position.X = 72.000000000000000000
@@ -87,6 +93,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 17
     Text = 'Lijevo7'
+    OnClick = Lijevo7Click
   end
   object Lijevo8: TButton
     Position.X = 72.000000000000000000
@@ -96,8 +103,10 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 18
     Text = 'Lijevo8'
+    OnClick = Lijevo8Click
   end
   object Desno1: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 56.000000000000000000
     Size.Width = 89.000000000000000000
@@ -105,8 +114,10 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 3
     Text = 'Button1'
+    OnClick = Desno1Click
   end
   object Desno2: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 104.000000000000000000
     Size.Width = 89.000000000000000000
@@ -116,6 +127,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button2'
   end
   object Desno3: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 152.000000000000000000
     Size.Width = 89.000000000000000000
@@ -125,6 +137,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button3'
   end
   object Desno4: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 200.000000000000000000
     Size.Width = 89.000000000000000000
@@ -134,6 +147,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button4'
   end
   object Desno5: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 248.000000000000000000
     Size.Width = 89.000000000000000000
@@ -143,6 +157,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button5'
   end
   object Desno6: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 296.000000000000000000
     Size.Width = 89.000000000000000000
@@ -152,6 +167,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button6'
   end
   object Desno7: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 344.000000000000000000
     Size.Width = 89.000000000000000000
@@ -161,6 +177,7 @@ object SpajanjeForma: TSpajanjeForma
     Text = 'Button7'
   end
   object Desno8: TButton
+    Enabled = False
     Position.X = 424.000000000000000000
     Position.Y = 392.000000000000000000
     Size.Width = 89.000000000000000000
