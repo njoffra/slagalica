@@ -125,6 +125,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 4
     Text = 'Button2'
+    OnClick = Desno2Click
   end
   object Desno3: TButton
     Enabled = False
@@ -135,6 +136,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 5
     Text = 'Button3'
+    OnClick = Desno3Click
   end
   object Desno4: TButton
     Enabled = False
@@ -145,6 +147,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 6
     Text = 'Button4'
+    OnClick = Desno4Click
   end
   object Desno5: TButton
     Enabled = False
@@ -155,6 +158,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 7
     Text = 'Button5'
+    OnClick = Desno5Click
   end
   object Desno6: TButton
     Enabled = False
@@ -165,6 +169,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 8
     Text = 'Button6'
+    OnClick = Desno6Click
   end
   object Desno7: TButton
     Enabled = False
@@ -175,6 +180,7 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 9
     Text = 'Button7'
+    OnClick = Desno7Click
   end
   object Desno8: TButton
     Enabled = False
@@ -185,5 +191,6 @@ object SpajanjeForma: TSpajanjeForma
     Size.PlatformDefault = False
     TabOrder = 10
     Text = 'Button8'
+    OnClick = Desno8Click
   end
 end

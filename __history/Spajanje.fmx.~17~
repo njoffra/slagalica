@@ -1,0 +1,196 @@
+object SpajanjeForma: TSpajanjeForma
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object IzlazButton: TButton
+    Position.X = 256.000000000000000000
+    Position.Y = 400.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'IzlazButton'
+    OnClick = IzlazButtonClick
+  end
+  object TestText: TText
+    Position.X = 520.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Lijevo1: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Text = 'Lijevo1'
+    OnClick = Lijevo1Click
+  end
+  object Lijevo2: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 12
+    Text = 'Lijevo2'
+    OnClick = Lijevo2Click
+  end
+  object Lijevo3: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Lijevo3'
+    OnClick = Lijevo3Click
+  end
+  object Lijevo4: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 200.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    Text = 'Lijevo4'
+    OnClick = Lijevo4Click
+  end
+  object Lijevo5: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 15
+    Text = 'Lijevo5'
+    OnClick = Lijevo5Click
+  end
+  object Lijevo6: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = 'Lijevo6'
+    OnClick = Lijevo6Click
+  end
+  object Lijevo7: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    Text = 'Lijevo7'
+    OnClick = Lijevo7Click
+  end
+  object Lijevo8: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    Text = 'Lijevo8'
+    OnClick = Lijevo8Click
+  end
+  object Desno1: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Button1'
+    OnClick = Desno1Click
+  end
+  object Desno2: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'Button2'
+    OnClick = Desno2Click
+  end
+  object Desno3: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 152.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Button3'
+    OnClick = Desno3Click
+  end
+  object Desno4: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 200.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Button4'
+    OnClick = Desno4Click
+  end
+  object Desno5: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 248.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Button5'
+    OnClick = Desno5Click
+  end
+  object Desno6: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 296.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Button6'
+    OnClick = Desno6Click
+  end
+  object Desno7: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 344.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Button7'
+    OnClick = Desno7Click
+  end
+  object Desno8: TButton
+    Enabled = False
+    Position.X = 424.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Button8'
+    OnClick = Desno8Click
+  end
+end

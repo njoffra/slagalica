@@ -73,11 +73,15 @@ TSpajanjeForma *SpajanjeForma;
  bool pritisnut=false;
  int izabrana_lijeva;
  int skor=0;
+ int num;
+ vector <int>izabrane_lijeve;
+ vector <int>tacni_desni;
 
 //---------------------------------------------------------------------------
 
 void omoguci_desne(){
-	SpajanjeForma->Desno1->Enabled = true;
+
+    SpajanjeForma->Desno1->Enabled = true;
 	SpajanjeForma->Desno2->Enabled = true;
 	SpajanjeForma->Desno3->Enabled = true;
 	SpajanjeForma->Desno4->Enabled = true;
@@ -85,6 +89,18 @@ void omoguci_desne(){
 	SpajanjeForma->Desno6->Enabled = true;
 	SpajanjeForma->Desno7->Enabled = true;
 	SpajanjeForma->Desno8->Enabled = true;
+
+	for(int i=0;i<tacni_desni.size();i++){
+		if(tacni_desni[i]==1) SpajanjeForma->Desno1->Enabled = false;
+		else if(tacni_desni[i]==2) SpajanjeForma->Desno2->Enabled = false;
+		else if(tacni_desni[i]==3) SpajanjeForma->Desno3->Enabled = false;
+		else if(tacni_desni[i]==4) SpajanjeForma->Desno4->Enabled = false;
+		else if(tacni_desni[i]==5) SpajanjeForma->Desno5->Enabled = false;
+		else if(tacni_desni[i]==6) SpajanjeForma->Desno6->Enabled = false;
+		else if(tacni_desni[i]==7) SpajanjeForma->Desno7->Enabled = false;
+		else if(tacni_desni[i]==8) SpajanjeForma->Desno8->Enabled = false;
+	}
+
 }
 
 void dodaj_zadatak(){
@@ -134,6 +150,8 @@ __fastcall TSpajanjeForma::TSpajanjeForma(TComponent* Owner)
 	rand();
 	int broj;
 	broj = rand()% svi_zadaci.size();
+	num = broj;
+
 	Lijevo1->Text = svi_zadaci[broj].daj_parove()[0].getLijeva().c_str();
 	Lijevo2->Text = svi_zadaci[broj].daj_parove()[1].getLijeva().c_str();
 	Lijevo3->Text = svi_zadaci[broj].daj_parove()[2].getLijeva().c_str();
@@ -151,6 +169,7 @@ __fastcall TSpajanjeForma::TSpajanjeForma(TComponent* Owner)
 	Desno7->Text = svi_zadaci[broj].daj_parove()[brojevi[6]].getDesna().c_str();
 	Desno8->Text = svi_zadaci[broj].daj_parove()[brojevi[7]].getDesna().c_str();
 	TestText->Text = broj;
+
 }
 //---------------------------------------------------------------------------
 void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
@@ -163,11 +182,10 @@ void __fastcall TSpajanjeForma::IzlazButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-
-
 void __fastcall TSpajanjeForma::Lijevo1Click(TObject *Sender)
 {
 	Lijevo1->Enabled = False;
+
 	Lijevo2->Enabled = True;
 	Lijevo3->Enabled = True;
 	Lijevo4->Enabled = True;
@@ -175,8 +193,20 @@ void __fastcall TSpajanjeForma::Lijevo1Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 1;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+            case 7:Lijevo8->Enabled = False;break;
+		}
+	}
+	izabrana_lijeva = 0;
 	omoguci_desne();
+
 }
 //---------------------------------------------------------------------------
 
@@ -190,7 +220,19 @@ void __fastcall TSpajanjeForma::Lijevo2Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 2;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 1;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -205,7 +247,19 @@ void __fastcall TSpajanjeForma::Lijevo3Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 3;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 2;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -220,7 +274,19 @@ void __fastcall TSpajanjeForma::Lijevo4Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 4;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 3;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -235,7 +301,19 @@ void __fastcall TSpajanjeForma::Lijevo5Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 5;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 4;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -250,7 +328,20 @@ void __fastcall TSpajanjeForma::Lijevo6Click(TObject *Sender)
 	Lijevo6->Enabled = False;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 6;
+
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 5;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -265,7 +356,19 @@ void __fastcall TSpajanjeForma::Lijevo7Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = False;
 	Lijevo8->Enabled = True;
-	izabrana_lijeva = 7;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 7:Lijevo8->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 6;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
@@ -280,22 +383,139 @@ void __fastcall TSpajanjeForma::Lijevo8Click(TObject *Sender)
 	Lijevo6->Enabled = True;
 	Lijevo7->Enabled = True;
 	Lijevo8->Enabled = False;
-	izabrana_lijeva = 8;
+	for(int i=0;i<izabrane_lijeve.size();i++){
+		switch(izabrane_lijeve[i]){
+			case 0:Lijevo1->Enabled = False;break;
+			case 1:Lijevo2->Enabled = False;break;
+			case 2:Lijevo3->Enabled = False;break;
+			case 3:Lijevo4->Enabled = False;break;
+			case 4:Lijevo5->Enabled = False;break;
+			case 5:Lijevo6->Enabled = False;break;
+			case 6:Lijevo7->Enabled = False;break;
+
+		}
+	}
+	izabrana_lijeva = 7;
 	omoguci_desne();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TSpajanjeForma::Desno1Click(TObject *Sender)
 {
-	if(izabrana_lijeva == 1){  // nemere treba vrijednost vezana za svako dugme
+	String tekst_desne = Desno1->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
 		skor = skor + 2;
 		Desno1->Enabled = false;
+		tacni_desni.push_back(1);
 	}
-	TestText->Text = Lijevo1->Text;
-	if(TestText->Text == Lijevo1->Text){
-        TestText->Text = "Suces";
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno2Click(TObject *Sender)
+{
+	String tekst_desne = Desno2->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno2->Enabled = false;
+		tacni_desni.push_back(2);
 	}
 
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno3Click(TObject *Sender)
+{
+	String tekst_desne = Desno3->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno3->Enabled = false;
+		tacni_desni.push_back(3);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno4Click(TObject *Sender)
+{
+	String tekst_desne = Desno4->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno4->Enabled = false;
+		tacni_desni.push_back(4);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno5Click(TObject *Sender)
+{
+	String tekst_desne = Desno5->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno5->Enabled = false;
+		tacni_desni.push_back(5);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno6Click(TObject *Sender)
+{
+	String tekst_desne = Desno6->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno6->Enabled = false;
+		tacni_desni.push_back(6);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno7Click(TObject *Sender)
+{
+	String tekst_desne = Desno7->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno7->Enabled = false;
+		tacni_desni.push_back(7);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TSpajanjeForma::Desno8Click(TObject *Sender)
+{
+	String tekst_desne = Desno8->Text;
+
+	if(svi_zadaci[num].daj_parove()[izabrana_lijeva].getDesna().c_str() == tekst_desne){
+		skor = skor + 2;
+		Desno8->Enabled = false;
+		tacni_desni.push_back(8);
+	}
+
+	TestText->Text = skor;
+	izabrane_lijeve.push_back(izabrana_lijeva);
 }
 //---------------------------------------------------------------------------
 
